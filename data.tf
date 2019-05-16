@@ -1,0 +1,1 @@
+/mnt/c/Users/dmytro.pivnev/Documents/data.tf
