@@ -1,3 +1,5 @@
+
 data "template_file" "ec2-launch-configuration-user-data" {
-  template = "${file("user-data.tpl")}"
+  template = "${file("${path.module}/user-data.tpl")}"
 }
+
