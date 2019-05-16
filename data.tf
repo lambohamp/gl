@@ -1,1 +1,3 @@
-/mnt/c/Users/dmytro.pivnev/Documents/data.tf
+data "template_file" "ec2-launch-configuration-user-data" {
+  template = "${file("user-data.tpl")}"
+}

@@ -1,1 +1,3 @@
-/mnt/c/Users/dmytro.pivnev/Documents/user-data.tpl
+#!/bin/bash
+
+apt-get update && sudo apt install -y nginx

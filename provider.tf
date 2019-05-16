@@ -1,1 +1,3 @@
-/mnt/c/Users/dmytro.pivnev/Documents/provider.tf
+provider "aws" {
+  region = "${var.region}"
+}
