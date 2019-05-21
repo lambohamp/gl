@@ -30,7 +30,7 @@ spec:
   type: ClusterIP
   ports:
   - protocol: TCP
-    port: 80
+    port: 6379
     targetPort: 6379
 ---
 apiVersion: extensions/v1beta1
@@ -46,5 +46,5 @@ spec:
       paths:
       - backend:
           serviceName: redis
-          servicePort: 80
+          servicePort: 6379
         path: /
