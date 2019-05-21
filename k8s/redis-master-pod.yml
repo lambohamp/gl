@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: redis
+    redis-sentinel: "true"
+    role: master
+  name: redis-master
+spec:
+  containers:
+    - name: master
+      image: k8s.gcr.io/redis:v1
+      env:
+        - name: MASTER
+          value: "true"
+      ports:
+        - containerPort: 6379
+    - name: sentinel
+      image: k8s.gcr.io/redis:v1
+      env:
+        - name: SENTINEL
+          value: "true"
+      ports:
+        - containerPort: 26379
