@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-cluster
+  labels:
+    app: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+      - name: redis
+        image: redis:latest
+        ports:
+        - containerPort: 6379
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+spec:
+  selector:
+    app: redis
+  type: ClusterIP
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 6379
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: redis
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+  - host: redis.a280eef6369e49d89a74.eastus.aksapp.io
+    http:
+      paths:
+      - backend:
+          serviceName: redis
+          servicePort: 80
+        path: /
