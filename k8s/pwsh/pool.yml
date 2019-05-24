@@ -1,0 +1,24 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 7
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      tolerations:
+      - key: "nginx"
+        operator: "Equal"
+        value: "yes"
+        effect: "NoSchedule"
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        resources:
+          requests:
+            cpu: "100m"
+        ports:
+        - containerPort: 80
