@@ -1,7 +1,11 @@
 <pre>
 ############# Description ###########
 
-We have 2 node pools with 3 and 1 nodes respectively. 2 nodes out of 3 in the firts pool are tainted with nginx=no:NoSchedule to prevent pod to be scheduled there. The third one is tainted with nginx=yes:NoSchedule; that's why we add a corresponding toleration to the deployment manifest. The node in the second pool is cordoned for the same reason. Therefore, when we apply the deployment, all the pods are created within a single node.
+We have 2 node pools with 3 and 1 nodes respectively. 2 nodes out of 3 in the firts pool are tainted with 
+nginx=no:NoSchedule to prevent pod to be scheduled there. The third one is tainted with nginx=yes:NoSchedule; 
+that's why we add a corresponding toleration to the deployment manifest. 
+The node in the second pool is cordoned for the same reason. Therefore, when we apply the deployment, 
+all the pods are created within a single node.
 
 The final goal is to evict all the pods from the node and schedule them to a new one.
 
