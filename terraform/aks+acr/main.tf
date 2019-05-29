@@ -31,3 +31,15 @@ module "Resource_group" {
   resource_group_name = "${var.resource_group_name}"
   location            = "${var.location}"
 }
+
+module "Vault" {
+  source              = "./modules/Vault"
+  vault_name          = "${var.vault_name}"
+  tenant_id           = "${var.tenant_id}"
+  sku                 = "${var.sku}"
+  object_id           = "${var.object_id}"
+  location            = "${var.location}"
+  resource_group_name = "${var.resource_group_name}"
+
+  depends_on = ["${module.Resource_group.id}"]
+}

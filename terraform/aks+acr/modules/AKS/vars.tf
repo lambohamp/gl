@@ -12,6 +12,7 @@ variable "client_secret" {}
 
 variable "resource_group_name" {}
 variable "location" {}
+
 variable "depends_on" {
   type = "list"
 }

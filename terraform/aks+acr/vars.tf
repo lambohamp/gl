@@ -30,6 +30,15 @@ variable "pool_name" {
   default = "nodepool1"
 }
 
-variable "client_id" {}
+variable "vault_name" {
+  default = "gltest"
+}
 
+variable "sku" {
+  default = "standard"
+}
+
+variable "object_id" {}
+variable "tenant_id" {}
+variable "client_id" {}
 variable "client_secret" {}
