@@ -12,6 +12,19 @@ spec:
       containers:
       - name: postgres
         image: postgres:latest
-        envFrom:
-          - configMapRef:
+        env:
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
               name: postgres-config
+              key: postgres.db
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: username
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: password
