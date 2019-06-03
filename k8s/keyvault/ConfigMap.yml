@@ -5,6 +5,6 @@ metadata:
   labels:
     app: postgres
 data:
-  POSTGRES_PASSWORD: MyPassword~123
-  POSTGRES_USER: admin123
-  POSTGRES_DB: my_db
+  POSTGRES_PASSWORD: TXlQYXNzd29yZH4xMjM=
+  POSTGRES_USER: YWRtaW4xMjM=
+  POSTGRES_DB: bXlfZGI=
