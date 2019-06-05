@@ -1,0 +1,8 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+ name: akv-identity
+spec:
+ type: 0
+ ResourceID: /subscriptions/44bd1d98-b09d-428c-9591-47afbfe42d75/resourcegroups/MC_k8s_test_eastus/providers/Microsoft.ManagedIdentity/userAssignedIdentities/akv-identity
+ ClientID: 37d76c9c-ad11-43a4-aa9d-b3def95c4061
