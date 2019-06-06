@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: postgres
+  name: ubuntu
   namespace: akv
   labels:
     aadpodidbinding: akv-identity
 spec:
   containers:
-  - name: postgres
+  - name: ubuntu
     image: docker.io/dlsfrdm/intern:latest
     env:
     - name: MY_SECRET
