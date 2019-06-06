@@ -112,7 +112,7 @@ spec:
       type: secret # object type 
       name: test-secret # name of the object
 ```
-- Inject into applications using syntax below, referencing to the AzureKeyVaultSecret in 10.
+- Inject into applications using syntax below, referencing to the AzureKeyVaultSecret in the previous step.
 
 ```yaml
 env:
