@@ -27,7 +27,7 @@ az identity create -g MC_k8s_gltest_eastus -n my-identity
 - Assign permissions to new identity to ensure your Azure user identity has all the required permissions to read the keyvault instance and to access content within your key vault instance.
 
 ```
-az role assignment create --role Reader --assignee <principalid> --scope /subscriptions/<subscriptionid>/resourcegroups/<resourcegroup>/providers/Microsoft.KeyVault/vaults/<keyvaultname>
+az role assignment create --role Reader --assignee <principalidofidentity> --scope /subscriptions/<subscriptionid>/resourcegroups/<resourcegroup>/providers/Microsoft.KeyVault/vaults/<keyvaultname>
 ```
 
 e.g.
