@@ -116,8 +116,8 @@ spec:
 
 ```yaml
 env:
-
-    name: <name of environment variable> value: <name of AzureKeyVaultSecret>@azurekeyvault
+- name: <name of environment variable> 
+  value: <name of AzureKeyVaultSecret>@azurekeyvault
 ```
 
 - Apply the resources to Kubernetes
