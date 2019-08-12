@@ -80,6 +80,12 @@ d=[]
 for idx, val in enumerate(l):
     d.append(val[1])
 
+t=[]
+for idx, val in enumerate(mylist):
+    t.append(val[0])
+
+s=(sum(t))
+
 from collections import OrderedDict
 
 e = list(OrderedDict.fromkeys(d))
@@ -121,6 +127,7 @@ worksheet.merge_range('A1:A2', 'Date', bold)
 worksheet.merge_range('B1:K1', 'Resource Group', bold)
 
 worksheet.write(row + 1, 0, 'Total', bold)
+worksheet.write(row + 2, col, s, money_format)
 worksheet.merge_range('B4:C4', '=SUM(B3:C3)', money_format)
 worksheet.merge_range('D4:E4', '=SUM(D3:E3)', money_format)
 worksheet.merge_range('F4:G4', '=SUM(F3:G3)', money_format)
