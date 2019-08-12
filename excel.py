@@ -126,7 +126,7 @@ for date in e:
 worksheet.merge_range('A1:A2', 'Date', bold)
 worksheet.merge_range('B1:K1', 'Resource Group', bold)
 
-worksheet.write(row + 1, 0, 'Total', bold)
+worksheet.write(row + 1, 0, 'Total:', bold)
 worksheet.write(row + 2, col, s, money_format)
 worksheet.merge_range('B4:C4', '=SUM(B3:C3)', money_format)
 worksheet.merge_range('D4:E4', '=SUM(D3:E3)', money_format)
