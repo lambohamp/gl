@@ -101,7 +101,7 @@ date_format = workbook.add_format({'num_format': 'mmmm', 'align': 'center'})
 money_format = workbook.add_format({'num_format': '$0,#.00', 'align': 'center'})
 group_format = workbook.add_format({'align': 'center'})
 
-worksheet.set_column('B1:N4', 40)
+worksheet.set_column('B1:N4', 30)
 
 row = 1
 col = 1
@@ -126,13 +126,12 @@ for date in e:
 worksheet.merge_range('A1:A2', 'Date', bold)
 worksheet.merge_range('B1:N1', 'Resource Group', bold)
 
-worksheet.write(row + 1, 0, 'Total:', bold)
+worksheet.write(row + 1, col, 'Total:', bold)
 worksheet.write(row + 2, col, s, money_format)
-worksheet.merge_range('B4:C4', '=SUM(B3:C3)', money_format)
-worksheet.merge_range('D4:F4', '=SUM(D3:F3)', money_format)
-worksheet.merge_range('G4:I4', '=SUM(G3:I3)', money_format)
-worksheet.merge_range('J4:L4', '=SUM(J3:L3)', money_format)
-worksheet.write('M4', '=SUM(M3)', money_format)
+worksheet.merge_range('B4:D4', '=SUM(B3:D3)', money_format)
+worksheet.merge_range('E4:G4', '=SUM(E3:G3)', money_format)
+worksheet.merge_range('H4:J4', '=SUM(H3:J3)', money_format)
+worksheet.merge_range('K4:M4', '=SUM(K3:M3)', money_format)
 worksheet.write('N4', '=SUM(N3)', money_format)
 
 workbook.close()
